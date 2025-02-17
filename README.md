@@ -1,2 +1,3 @@
-# falih-php-dev
-PHP laravel development env
+# PHP Laravel Development
+
+PHP laravel development with Falih.
