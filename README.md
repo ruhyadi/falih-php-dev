@@ -1,3 +1,3 @@
 # PHP Laravel Development
 
-PHP laravel development with Falih.
+PHP laravel development with Falih Heriyanto.
