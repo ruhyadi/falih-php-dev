@@ -1,0 +1,28 @@
+services:
+  php-devel:
+    container_name: php-devel
+    build:
+      context: .
+      dockerfile: dockerfile.devel
+    volumes:
+      - .:/home/vscode/workspace
+    command: sleep infinity
+    networks:
+      - php-devel-network
+
+  php-postgres:
+    container_name: php-postgres
+    image: postgres:16-alpine
+    env_file: .env
+    ports:
+      - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    command: -p ${POSTGRES_PORT:-5432}
+    networks:
+      - php-devel-network
+
+networks:
+  php-devel-network:
+    name: php-devel-network
+    driver: bridge

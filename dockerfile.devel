@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/devcontainers/php:8.3-bookworm
+
+ARG NODE_VERSION=20
+
+# download and install nodejs
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
+    && apt-get install -y nodejs
+
+# install typescript
+RUN npm install -g typescript
+
+# install php packages
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    libicu-dev \
+    libzip-dev \
+    && docker-php-ext-install pdo_pgsql intl zip

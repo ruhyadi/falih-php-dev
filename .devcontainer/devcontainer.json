@@ -1,0 +1,24 @@
+{
+    "name": "php-devel",
+    "dockerComposeFile": "../docker-compose.devel.yaml",
+    "service": "php-devel",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/home/vscode/workspace",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+    },
+    "containerEnv": {
+        "TZ": "Asia/Jakarta"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "DEVSENSE.phptools-vscode",
+                "ms-vscode.makefile-tools",
+                "eamodio.gitlens",
+                "redhat.vscode-yaml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
+}
